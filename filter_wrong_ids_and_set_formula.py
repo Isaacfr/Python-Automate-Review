@@ -7,8 +7,6 @@ def filter_ids_and_set_formula_function(source_file, src_sheet, lookup_file_path
    wb = openpyxl.load_workbook(source_file)
 
    #Select the Source Sheet
-   #source_sheet = wb['Sheet1']
-   #source_sheet = wb['Concise Statement']
    source_sheet = wb[src_sheet]
 
    #Create a new Sheet
@@ -52,7 +50,6 @@ def filter_ids_and_set_formula_function(source_file, src_sheet, lookup_file_path
    #for row_index in range(2, 4):
       lookup_value = destination_sheet.cell(row=row_index, column=lookup_value_col).value
       if lookup_value is not None:  # Only create XLOOKUP if there is a lookup value
-         # =TEXT(XLOOKUP(C2,'Temp ID Lookup'!$G:$G,'Temp ID Lookup'!$E:$E), 0)
          # Construct the XLOOKUP formula
          xlookup_formula = (
             f'=VALUETOTEXT('
