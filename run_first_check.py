@@ -1,0 +1,7 @@
+import filenames, import_columns, find_blanks, filter_wrong_ids_and_set_formula
+
+import_columns.import_columns_function(source_file=filenames.source_file, raw_sheet=filenames.raw_sheet, columns_to_copy=filenames.columns_to_import, columns_to_modify=filenames.columns_to_modify, new_sheet_name=filenames.new_sheet_name)
+find_blanks.find_blanks_function(filenames.source_file, filenames.source_sheet)
+filter_wrong_ids_and_set_formula.filter_ids_and_set_formula_function(filenames.source_file, filenames.source_sheet, filenames.lookup_file_path, filenames.lookup_table_file, filenames.lookup_full_path, filenames.lookup_table_sheet_name, filenames.lookup_value_col)
+#run_macro_a.run_vba_macro_on_worksheet(filenames.source_file, 'Verify IDs')
+#filter_blanks_and_wrongids.filter_blanks_and_wrong_ids_function(filenames.source_file, filenames.source_sheet, filenames.lookup_file_path, filenames.lookup_table_file, filenames.lookup_full_path, filenames.lookup_table_sheet_name, filenames.lookup_value_col)

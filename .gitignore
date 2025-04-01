@@ -1,0 +1,17 @@
+# Ignore Python bytecode
+__pycache__/
+*.pyc
+
+# Ignore environment variables
+.env
+
+# Ignore log files
+*.log
+
+# Ignore specific files
+filenames.py
+filenames_update_ids.py
+filter_rows_after_verifying_ids.py
+import_data_into_tracker.py
+run_macro_a.py
+update_id_files.py
