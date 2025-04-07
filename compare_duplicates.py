@@ -104,7 +104,7 @@ def create_id_mapping(file_path):
 # Example usage
 #input_file = r""
 
-highlight_duplicates(source_file):
+def highlight_duplicates(input_file):
     find_duplicates_and_export(input_file)
     create_date_ranges(input_file)
     create_id_mapping(input_file)

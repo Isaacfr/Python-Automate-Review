@@ -1,7 +1,4 @@
 import filenames, filter_blanks_and_wrongids, find_closest_project, compare_duplicates
 
-filter_blanks_and_wrongids.filter_blanks_and_wrong_ids_function(filenames.source_file, filenames.source_sheet, filenames.lookup_file_path, filenames.lookup_table_file, filenames.lookup_full_path, filenames.lookup_table_sheet_name, filenames.lookup_value_col)
+filter_blanks_and_wrongids.filter_blanks_and_wrong_ids_function(filenames.source_file, filenames.verify_id_sheet, filenames.lookup_file_path, filenames.lookup_table_file, filenames.lookup_full_path, filenames.lookup_table_sheet_name, filenames.lookup_value_col)
 
-find_closest_project.find_closest_project(filenames.source_file, filenames.source_sheet, filenames.lookup_file_path, filenames.lookup_table_file, filenames.lookup_full_path, filenames.lookup_table_sheet_name)
-
-compare_duplicates.highlight_duplicates(filenames.source_file)

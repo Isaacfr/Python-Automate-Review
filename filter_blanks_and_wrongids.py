@@ -4,13 +4,13 @@ import filenames
 
 # Function to evaluate conditional formatting based on the specified condition
 def evaluate_conditional_formatting(row):
-   # Get the values from column B and D (assuming 0-based index)
-   value_b = row[1].value  # Column B (index 1)
-   value_d = row[3].value  # Column D (index 3)
+    # Get the values from column B and D (assuming 0-based index)
+    value_b = row[1].value  # Column B (index 1)
+    value_d = row[3].value  # Column D (index 3)
+    
+    # Check if both values are not None and if they are trimmed and not equal
+    return value_b is not None and value_d is not None and value_b.replace(" ","").lower() != value_d.replace(" ","").lower()
 
-   # Check if both values are not None and if they are trimmed and not equal
-   return value_b is not None and value_d is not None and value_b.replace(" ","").lower() != value_d.replace(" ","").lower()
- 
 def filter_blanks_and_wrong_ids_function(src_file, src_sheet, lookup_file_path, lookup_table_file, lookup_full_path, lookup_table_sheet_name, lookup_value_col):
    workbook = openpyxl.load_workbook(src_file, data_only=True)
    source_sheet = workbook[src_sheet]  # Replace with your actual sheet name
