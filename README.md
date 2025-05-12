@@ -13,3 +13,6 @@ The combination of openpyxl and Pandas helped me with this project. This code re
 What Would I Improve on?
 I would like to fully automate the process to an extent but this is also dependent on the data I receive.
 As I have researched, I am currently limited based on using formulas with external data. By fixing this issue (outside of the code), I believe I will be able to automate the process.
+
+05/12 Update:
+Based on requirements for my company, I included a web-scrapping portion that extracts the GSA Rate for Hotel Amounts, before tax. Then, I can use this to compare if the rates are approvable under policy.
