@@ -36,6 +36,7 @@ def main():
     unique_values = set(combined_list)
 
     #Initialize a dictionary that is set to none
+    global result_dict
     result_dict = {key: None for key in unique_values}
 
     #Create a new tab that finds the gsa_rate for each row.
