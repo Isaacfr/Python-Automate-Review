@@ -1,6 +1,9 @@
 from bs4 import BeautifulSoup
 import requests
 import pandas as pd
+import filenames
+from openpyxl import load_workbook
+from openpyxl.styles import PatternFill
 
 def compare_gsa_rate_function(year = 2025, zip_code = 32065, check_month='3'):
 
@@ -85,11 +88,33 @@ def compare_gsa_rate_function(year = 2025, zip_code = 32065, check_month='3'):
        #Extract rate based on month that was used as input
        lodging_rate = months_dict[check_month]
        #print(lodging_rate)
-   
-       return lodging_rate
+       lodging_rate_value = float(lodging_rate.strip('$'))       
+
+       return lodging_rate_value
 
    else:
        return 0
+
+def highlight_values(src_file):
+    wb = load_workbook(src_file)
+    ws = wb['GSA Rate']
+
+    # Define fill color for highlighting
+    yellow_fill = PatternFill(start_color="FFFF00", end_color="FFFF00", fill_type="solid")
+    
+    for row in ws.iter_rows(min_row=2):
+        cell_a, cell_b = row[2], row[6]
+        # Make sure both cells have numeric values before comparing
+        if (cell_a.value is not None and cell_b.value is not None 
+            and isinstance(cell_a.value, (int, float)) and isinstance(cell_b.value, (int, float))):
+            if cell_a.value > cell_b.value:
+                cell_a.fill = yellow_fill
+                cell_b.fill = yellow_fill
+
+    wb.save(src_file)
+
+
+#highlight_values(filenames.source_file, filenames.source_sheet)
 
 #Test calling the function
 #compare_gsa_rate_function()

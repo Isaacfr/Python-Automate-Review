@@ -1,8 +1,7 @@
-#import filenames, filter_blanks_and_wrongids, find_closest_project, compare_duplicates, create_gsa_rate_tab
-import create_gsa_rate_tab
+import filenames, create_gsa_rate_tab, highlight_wrong_ids
 
-#find_closest_project.find_closest_project(filenames.source_file, filenames.source_sheet, filenames.lookup_file_path, filenames.lookup_table_file, filenames.lookup_full_path, filenames.lookup_table_sheet_name)
-
-#compare_duplicates.highlight_duplicates(filenames.source_file)
+highlight_wrong_ids.highlight_wrong_ids_function(filenames.source_file, filenames.source_sheet)
 
 create_gsa_rate_tab.main()
+
+print("Highlighted incorrect IDs to correct. \nCreated GSA rate to compare amounts to GSA rate")

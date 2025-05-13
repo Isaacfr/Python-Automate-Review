@@ -57,8 +57,8 @@ def create_id_mapping(file_path):
 
     # Iterate through the rows in the sheet (assuming data starts from row 2)
     for row in sheet.iter_rows(min_row=2, values_only=True):
-        key_id = row[7]  # Assuming the key ID is in the first column (A)
-        value_id = row[0]  # Assuming the value ID is in the second column (B)
+        key_id = row[8]  # Key ID is in row[8]
+        value_id = row[0]  # Value ID is in row[0]
 
         # Check if the key already exists in the dictionary
         if key_id in id_mapping:

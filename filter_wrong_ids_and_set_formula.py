@@ -13,7 +13,7 @@ def filter_ids_and_set_formula_function(source_file, src_sheet, lookup_file_path
    destination_sheet = wb.create_sheet(title='Verify IDs')
 
    #Define Columns To Import
-   columns_to_transfer = [1, 7, 8]  # Specify the columns to import
+   columns_to_transfer = [1, 7, 9]  # Specify the columns to import
 
    # Initialize a variable to keep track of the new column index in the destination sheet
    new_col_index = 1
@@ -48,7 +48,7 @@ def filter_ids_and_set_formula_function(source_file, src_sheet, lookup_file_path
    # Create an XLOOKUP formula for each row in the destination sheet
    for row_index in range(2, destination_sheet.max_row + 1):  # Start from row 2 to skip header
    #for row_index in range(2, 4):
-      lookup_value = destination_sheet.cell(row=row_index, column=lookup_value_col).value
+      lookup_value = destination_sheet.cell(row=row_index, column=int(lookup_value_col)).value
       if lookup_value is not None:  # Only create XLOOKUP if there is a lookup value
          # Construct the XLOOKUP formula
          xlookup_formula = (
