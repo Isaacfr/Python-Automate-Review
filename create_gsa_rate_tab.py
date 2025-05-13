@@ -19,9 +19,8 @@ def create_gsa_column(row):
 
 def main():
     # Read the Excel file into a DataFrame
-    file_path = 'your_file.xlsx'
-    #df = pd.read_excel(filenames.source_file, filenames.raw_sheet)  # Specify the sheet name if necessary
-    df = pd.read_excel(r"\\fs1.csi.local\Front Office\Data\CSI HCIT\2025 CSI PAID RECEIPTS_BILLABLE\Period 2 - 05.04_05.25\Hotel Engine\05.04\HE 05.04 STATEMENT.xlsx", 'statement-403947-2504-4')
+    #file_path = 'your_file.xlsx'
+    df = pd.read_excel(filenames.source_file, filenames.raw_sheet)  # Specify the sheet name if necessary
 
     #Select specific columns
     columns_to_extract = ['Booking ID', 'Billed End', 'Average Nightly Rate w/out Taxes and Fees', 'Hotel Postal Code', 'Travelers']
